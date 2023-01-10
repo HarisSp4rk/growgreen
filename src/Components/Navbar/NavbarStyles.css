@@ -1,0 +1,63 @@
+.NavbarItems{
+    margin: 1.5rem auto auto auto ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding: 1rem 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.25);
+}
+
+.navbar-logo{
+    color:#09886F;
+    font-size: 2rem;
+    white-space: nowrap;
+    cursor: pointer;
+    display: flex;
+}
+
+.navbar-logoImg {
+    padding-right:1rem;
+    
+}
+
+.nav-menu{
+    display: grid;  
+    grid-template-columns: repeat(6,auto);
+    grid-gap: 15px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links {
+    text-decoration: none;
+    color:black;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.7rem 2rem ;
+    white-space: nowrap;
+    border:#40D1B5 1px solid;
+    border-radius: 3rem;
+}
+
+.nav-links:hover, .active {
+    background-color: #09886F;
+    color: white;
+    border: transparent 1px solid;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-link-login {
+    text-decoration: none;
+    color:black;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.7rem 1rem ;
+    white-space: nowrap;
+}
+
+.nav-link-login:hover{
+    text-decoration: underline;
+    transition: all 0.2s ease-in-out;
+}
