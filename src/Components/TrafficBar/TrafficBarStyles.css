@@ -1,0 +1,29 @@
+.trafficBar-container{
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.progress-bar{
+    height:1rem;
+    width:10rem;
+    margin: auto 1rem;
+    border-radius: 1rem;
+    background-image: linear-gradient(90deg, #B53031, #644545);
+}
+
+.progress-bar-stats{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    text-align: center;
+}
+
+.progress-bar-stats-inner-div{
+    position: relative;
+    right: 1rem;
+    bottom: 0.5rem;
+    padding: 0.15rem 0.5rem;
+    background-color: white;
+    color: black;
+    border-radius: 10rem;
+}
