@@ -39,6 +39,7 @@
 } */
 
 .intro-image button{
+    width: 223px;
     height:56px;
     box-shadow: 0px 18px 40px -12px rgba(45, 55, 72, 0.35);
     border-radius: 60px;
@@ -54,14 +55,12 @@
 }
 
 .button1 {
-    width: 223px;
     background: #09886F;
     right: 24rem;
     top: 12rem;
 }
 
 .button2 {
-    width:223px;
     background: #2D3748;
     right: 34rem;
     top: 19rem;

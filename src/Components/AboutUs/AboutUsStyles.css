@@ -1,0 +1,73 @@
+.aboutUs-container{
+    width: 95%;
+    margin: auto;
+    display:flex;
+}
+
+.aboutUs-left-side{
+    display: flex;
+    flex-direction: column;
+}
+
+.reports-pic{
+    position: relative;
+    
+}
+
+.charts-pic{
+    bottom: 8.5rem;
+    position: relative;
+    left: 1rem;
+}
+
+.aboutUs-right-side{
+    text-align: left;
+    padding:1rem 4rem; 
+}
+
+.aboutUs-container h2{
+    color: #09886F;
+    font-size: 3rem;
+    font-weight: 550;
+}
+
+.aboutUs-container h1{
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.aboutUs-container p{
+    margin: 3rem 0 4rem 0;
+}
+
+.aboutUs-container button{
+    width: 223px;
+    height:56px;
+    box-shadow: 0px 18px 40px -12px rgba(45, 55, 72, 0.35);
+    border-radius: 60px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+.aboutUs-container .contactUs-button{
+    background-color: white;
+    margin-left: 2rem;
+}
+
+.contactUs-button:hover{
+    box-shadow: 0px 18px 40px -12px rgba(45, 55, 72, 0.35), inset black 0px 0px 0px 1px;
+}
+
+.aboutUs-bg{
+    width: 0;
+    height: 0;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+.aboutUs-bg img{
+    position: relative;
+    left: 10rem;
+    top: 10rem;
+}
