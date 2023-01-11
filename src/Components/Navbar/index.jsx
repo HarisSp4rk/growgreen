@@ -1,6 +1,6 @@
 import React from 'react'
 import './NavbarStyles.css'
-import logo from '../../Assets/logo.svg'
+import logo from '../../assets/logo.svg'
 import { MenuItems } from './MenuItems'
 
 const Navbar = () => {
