@@ -8,7 +8,7 @@ const LandingPage = () => {
         <div style={{ marginTop: '10rem' }}>
             <Intro />
             <AboutUs/>
-            {/* <Traffic/> */}
+            <Traffic/>
         </div>
     )
 }

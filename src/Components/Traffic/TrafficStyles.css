@@ -1,46 +1,46 @@
-.description-container{
+.description-container {
     display: flex;
     background-image: linear-gradient(90deg, #2D3748, #2D3748);
     color: white;
     width: 100%;
 }
 
-.description-container-left-side{
+.description-container-left-side {
     display: flex;
     flex: 1;
     text-align: left;
     flex-direction: column;
 }
 
-.description-container-left-side h1{
+.description-container-left-side h1 {
     font-size: 4rem;
     position: relative;
     left: 5rem;
     top: 5rem;
 }
 
-.description-container-left-side .all-traffic-bars{
-    position: relative; 
-    left:5rem; 
-    top:8rem;
+.description-container-left-side .all-traffic-bars {
+    position: relative;
+    left: 5rem;
+    top: 8rem;
 }
 
-.description-container-right-side{
+.description-container-right-side {
     display: flex;
     flex: 1;
     text-align: right;
     flex-direction: column;
     padding-right: 2rem;
-    color: #697283;    
+    color: #697283;
 }
 
-.description-container-right-side h1{
+.description-container-right-side h1 {
     font-size: 25rem;
     position: relative;
-    top:5rem;
+    top: 5rem;
 }
 
-.description-container-right-side h2{
+.description-container-right-side h2 {
     font-size: 10rem;
     position: relative;
     bottom: 8rem;
@@ -50,18 +50,55 @@
 .description-container-right-side p {
     position: relative;
     bottom: 7rem;
-    color:white;
+    color: white;
 }
 
-.traffic-bg{
+.traffic-bg {
     width: 0;
     height: 0;
     opacity: 0.1;
     /* z-index: -1; */
 }
 
-.traffic-bg img{
+.traffic-bg img {
     position: relative;
     left: 30rem;
-   
+
+}
+
+@media screen and (max-width: 700px) {
+    .description-container {
+        flex-direction: column;
+    }
+
+    .traffic-bg img {
+        left: 0;
+        top: 40rem;
+        width: 100vw;
+    }
+
+    .description-container-left-side h1 {
+        font-size: 2rem;
+        left: 1rem;
+        top: 1rem;
+    }
+
+    .description-container-right-side h1 {
+        font-size: 15rem;
+    }
+
+    .description-container-right-side h2 {
+        bottom: 2rem;
+        font-size: 5rem;
+        height:9rem;
+        
+    }
+    .description-container-right-side p {
+        bottom:1rem;
+        padding:1rem;
+    }
+    .description-container-left-side .all-traffic-bars {
+        left: 0.4rem;
+        top: 3rem;
+    }
 }
