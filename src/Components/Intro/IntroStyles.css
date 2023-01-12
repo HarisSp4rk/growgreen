@@ -122,9 +122,9 @@
 
 
 @media screen and (max-width: 1065px) {
-    /* body {
-        background-color: red;
-    } */
+    body {
+        background-color: rgb(166, 227, 237);
+    }
 
     .intro-top-text h1 {
         font-size: 1.7rem;
@@ -170,6 +170,11 @@
         top: 20%;
     }
 
+    .intro-bottom-text {
+        width: 100%;
+        margin: auto;
+    }
+
     /* .button1,
     .button2 {
         right: 0;
@@ -205,3 +210,49 @@
     }
     
 } */
+
+@media screen and (max-width: 1065px) {
+    .intro-image{
+        height:12rem;
+        }
+        
+        .intro-image button {
+            width: 6rem;
+            height: 1.5rem;
+            font-size: 0.5rem;
+        }
+        
+        .button1 {
+            right: 32%;
+            top: 43%;
+        }
+        
+        .button2 {
+        right: 60%;
+        top: 60%;
+        }
+        
+        
+        .intro-image-div1 {
+            width: 90%;
+            top: 14%;
+            left: 40%;
+        }
+        
+        .intro-image-inner-divs {
+            font-size: 0.4rem;
+            height: 1.6rem;
+        }
+        
+        .small-circle {
+            width: 0.3rem;
+            height: 0.3rem;
+            margin: auto auto auto 0.5rem;
+        }
+        
+        .intro-image-div2 {
+            width: 70%;
+            left: 60%;
+            top: 22%;
+        }
+}
