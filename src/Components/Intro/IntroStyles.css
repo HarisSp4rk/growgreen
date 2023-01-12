@@ -2,7 +2,6 @@
     width: 80%;
     margin: auto;
     text-align: center;
-    z-index: -2;
     position: relative;
 }
 
@@ -13,7 +12,7 @@
 .intro-top-text h1 {
     font-size: 3.75rem;
     color: #09886F;
-    margin:3rem;
+    margin: 3rem;
 }
 
 /* .intro-image {
@@ -21,7 +20,7 @@
     position: relative;
 } */
 
-.intro-image{
+.intro-image {
     background-image: url(../../assets/Hero_Image.svg);
     background-attachment: initial;
     background-size: 100% 100%;
@@ -40,9 +39,9 @@
     cursor: pointer;
 } */
 
-.intro-image button{
+.intro-image button {
     width: 223px;
-    height:56px;
+    height: 56px;
     box-shadow: 0px 18px 40px -12px rgba(45, 55, 72, 0.35);
     border-radius: 60px;
     color: white;
@@ -51,31 +50,33 @@
     position: relative;
 }
 
-.intro-image button:hover{
+.intro-image button:hover {
     text-decoration: underline;
     transition: all 0.2s ease-in-out;
 }
 
 .button1 {
     background: #09886F;
-    right: 24rem;
-    top: 12rem;
+    right: 40%;
+    top: 47%;
 }
 
 .button2 {
     background: #2D3748;
-    right: 34rem;
-    top: 19rem;
+    right: 57%;
+    top: 73%;
+
 }
 
-.button1:hover{
+.button1:hover {
     background-color: #40a692;
 }
-.button2:hover{
+
+.button2:hover {
     background-color: #575f6c;
 }
 
-.intro-image-inner-divs{
+.intro-image-inner-divs {
     background: #FFFFFF;
     box-shadow: 0px 4px 8px 2px rgba(9, 136, 111, 0.26);
     border-radius: 59px;
@@ -88,41 +89,88 @@
     /* height: 82px; */
 }
 
-.small-circle{
+.small-circle {
     background-color: #09886F;
     width: 0.5rem;
     height: 0.5rem;
-    margin:auto;
+    margin: auto;
     border-radius: 100%;
 }
 
-.intro-image-right-side-text{
+.intro-image-right-side-text {
     /* border:2px solid red; */
-    width:85%;
+    width: 85%;
     margin: 0.8rem;
 }
 
-.intro-image-div1{
-    /* width:30rem; */
-    width: 50%;
-    left: 40rem;
-    bottom: 1rem;
+.intro-image-div1 {
+    width: 30rem;
+    left: 65%;
+    bottom: 1%;
 }
 
-.intro-image-div2{
-    width: 40%;
-    left:48rem;
-    top: 2rem;
+.intro-image-div2 {
+    width: 25rem;
+    left: 82%;
+    top: 9%;
 }
 
-.intro-bottom-text{
-    width:59%;
-    margin: 10rem auto ;
+.intro-bottom-text {
+    width: 59%;
+    margin: 10rem auto;
 }
 
 
 @media screen and (max-width: 1065px) {
-    .button1,
+    /* body {
+        background-color: red;
+    } */
+
+    .intro-top-text h1 {
+        font-size: 1.7rem;
+        margin: 0;
+    }
+
+    .intro-top-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .intro-image button {
+        width: 126px;
+        height: 37px;
+        font-size: 0.7rem;
+    }
+
+    .button1 {
+        background: #09886F;
+        right: 45%;
+        top: 47%;
+    }
+
+    .button2 {
+        background: #2D3748;
+        right: 57%;
+        top: 67%;
+    }
+
+    .intro-image-inner-divs {
+        font-size: 0.7rem;
+        height: 3rem;
+    }
+
+    .intro-image-div1 {
+        width: 20rem;
+        left: 70%;
+        top: 14%;
+    }
+
+    .intro-image-div2 {
+        width: 18rem;
+        left: 85%;
+        top: 20%;
+    }
+
+    /* .button1,
     .button2 {
         right: 0;
         top: 0;
@@ -144,8 +192,9 @@
     .hero-image {
         width: 100%;
         margin-top: 1rem;
-    }
+    } */
 }
+
 /* @media screen and (max-width: 1430px) and (min-width:1065) {
     .intro-image-div1{
         left: 33rem;

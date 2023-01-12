@@ -7,8 +7,8 @@ const LandingPage = () => {
     return (
         <div style={{ marginTop: '10rem' }}>
             <Intro />
-            <AboutUs/>
-            <Traffic/>
+            {/* <AboutUs/>
+            <Traffic/> */}
         </div>
     )
 }
