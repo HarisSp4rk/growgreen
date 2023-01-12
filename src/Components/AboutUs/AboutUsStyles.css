@@ -71,3 +71,47 @@
     left: 10rem;
     top: 10rem;
 }
+
+@media screen and (max-width: 900px) {
+    .aboutUs-container{
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    
+    .aboutUs-right-side{
+        margin-top: 3rem; 
+    }
+    
+    .aboutUs-bg img {
+        width: 100vw;
+        bottom: 55rem;
+        top: unset;
+        left: unset;
+    }
+    
+    .reports-pic { 
+        width: 100vw; 
+    }
+    
+    .charts-pic {
+        width: 68vw;
+        margin-top: 2rem;
+    }
+    
+    .aboutUs-container h2 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    
+    .aboutUs-container h1 {
+    text-align: center;
+        font-size: 1.7rem;
+    }
+    
+    .aboutUs-container p {
+    text-align: center;
+        margin: 2rem auto;
+    }
+    
+    
+}
