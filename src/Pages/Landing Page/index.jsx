@@ -5,7 +5,7 @@ import Traffic from '../../Components/Traffic'
 
 const LandingPage = () => {
     return (
-        <div style={{ marginTop: '7rem' }}>
+        <div style={{ marginTop: '10rem' }}>
             <Intro />
             <AboutUs/>
             <Traffic/>
