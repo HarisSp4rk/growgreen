@@ -22,8 +22,10 @@ const AboutUs = () => {
             <h2>About Us</h2>
             <h1>We Provide Dashboard to know about atmosphere</h1>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+            <div style={{display:'flex', justifyContent:'center', alignItems:'cetner'}}>
             <button className='button1' style={{color:'white', border:'none'}} >View Dashboard</button>
             <button className='contactUs-button'>Contact Us</button>
+            </div>
         </div>
     </div>
   )
