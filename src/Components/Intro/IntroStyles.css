@@ -122,9 +122,6 @@
 
 
 @media screen and (max-width: 1065px) {
-    body {
-        background-color: rgb(166, 227, 237);
-    }
 
     .intro-top-text h1 {
         font-size: 1.7rem;
@@ -212,9 +209,9 @@
 } */
 
 @media screen and (max-width: 550px) {
-    .intro-image{
-        height:12rem;
-        }
+        .intro-image{
+            height:12rem;
+            }
         
         .intro-image button {
             width: 6rem;
