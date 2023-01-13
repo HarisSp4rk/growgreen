@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './IntroStyles.css'
 
 const Intro = () => {
+    useEffect(()=>{
+        window.scrollTo({
+            top: 50,
+            behavior: 'smooth',
+        });
+    },[])
+    
     return (
         <div className='intro-top-text'>
             <h2>A Project For </h2>

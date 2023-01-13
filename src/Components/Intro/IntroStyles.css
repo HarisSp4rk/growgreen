@@ -1,4 +1,5 @@
 .intro-top-text {
+    padding-top: 10rem;
     width: 80%;
     margin: auto;
     text-align: center;
@@ -12,7 +13,7 @@
 .intro-top-text h1 {
     font-size: 3.75rem;
     color: #09886F;
-    margin: 3rem;
+    margin-bottom: 3rem;
 }
 
 /* .intro-image {
@@ -117,7 +118,7 @@
 
 .intro-bottom-text {
     width: 59%;
-    margin: 10rem auto;
+    margin: 10rem auto auto auto;;
 }
 
 
@@ -209,9 +210,9 @@
 } */
 
 @media screen and (max-width: 550px) {
-        .intro-image{
-            height:12rem;
-            }
+    .intro-image{
+        height:12rem;
+    }
         
         .intro-image button {
             width: 6rem;
@@ -225,7 +226,7 @@
         }
         
         .button2 {
-        right: 60%;
+            right: 60%;
         top: 60%;
         }
         
@@ -253,3 +254,39 @@
             top: 22%;
         }
 }
+            @media screen and (max-width: 500px) {
+               
+                
+                .intro-image {
+                    height: 10rem;
+                    margin-top: 1rem;
+                    
+                    background-size: contain;
+                    width: 100%;
+                    background-repeat: no-repeat;
+                }
+                
+                .button1 {
+                    right: 27%;
+                    top: 30%;
+                }
+                
+                .button2 {
+                    right: 54%;
+                    top: 54%;
+                }
+                
+                .intro-image-div1 {
+                    width: 68%;
+                    top: 0%;
+                    left: 41%;
+                }
+                
+                .intro-image-div2 {
+                    width: 52%;
+                    left: 53%;
+                    top: 16%;
+                }
+                
+                
+            }

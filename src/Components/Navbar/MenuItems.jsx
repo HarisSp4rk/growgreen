@@ -3,8 +3,8 @@ import { CgProfile } from 'react-icons/cg';
 export const MenuItems = [
     {
         title: "Home",
-        url: "/",
-        cName: "nav-links active",
+        url: "home",
+        cName: "nav-links",
     },
     {
         title: "Dashboard",
@@ -13,7 +13,7 @@ export const MenuItems = [
     },
     {
         title: "About Us",
-        url: "/aboutUs",
+        url: "aboutUs",
         cName: "nav-links",
     },
     {
