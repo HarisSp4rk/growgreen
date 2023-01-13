@@ -61,12 +61,10 @@
 }
 
 .traffic-bg img {
-    position: relative;
-    left: 30rem;
-
+    max-width: 100vw;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
     .description-container {
         flex-direction: column;
     }
@@ -81,7 +79,7 @@
         font-size: 2rem;
         left: 0;
         top: 1rem;
-        padding:1rem
+        padding: 1rem
     }
 
     .description-container-right-side h1 {
@@ -91,15 +89,46 @@
     .description-container-right-side h2 {
         bottom: 2rem;
         font-size: 5rem;
-        height:9rem;
-        
+        height: 9rem;
+
     }
+
     .description-container-right-side p {
-        bottom:1rem;
-        padding:1rem;
+        bottom: 1rem;
+        padding: 1rem;
     }
+
     .description-container-left-side .all-traffic-bars {
         left: 0.4rem;
         top: 3rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .description-container-left-side .all-traffic-bars {
+        left: 0rem;
+        top: 1rem;
+        padding-left: 3rem;
+    }
+
+    .description-container-right-side h1 {
+        top: 0rem;
+    }
+
+    .description-container-right-side h2 {
+        bottom: 7rem;
+        height: 0;
+    }
+
+    .traffic-bg img {
+        left: 0;
+        top: 10rem;
+        position: relative;
+    }
+
+    .description-container {
+        margin: auto 0.2rem auto 0.1rem;
+        border-radius: 20px;
     }
 }

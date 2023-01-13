@@ -1,6 +1,7 @@
 .aboutUs-container{
     width: 95%;
     margin: auto;
+    padding-top: 10rem;
     display:flex;
 }
 
@@ -67,9 +68,6 @@
 }
 
 .aboutUs-bg img{
-    position: relative;
-    left: 10rem;
-    top: 10rem;
 }
 
 @media screen and (max-width: 900px) {
@@ -113,5 +111,16 @@
         margin: 2rem auto;
     }
     
+    
+}
+@media screen and (max-width: 900px) {
+    .aboutUs-right-side {
+        margin-top: 0;
+    }
+    
+    .aboutUs-container button{
+        height: 35px;
+        font-size: 0.6rem;
+    }
     
 }

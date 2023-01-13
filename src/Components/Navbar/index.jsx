@@ -4,6 +4,7 @@ import logo from '../../assets/logo.svg'
 import { MenuItems } from './MenuItems'
 import {RxHamburgerMenu} from 'react-icons/rx'
 import {GrFormClose} from 'react-icons/gr'
+import { Link } from 'react-scroll'
 
 
 const Navbar = () => {
@@ -16,7 +17,7 @@ const Navbar = () => {
         </div>
         <ul className={clicked?'nav-menu active':'nav-menu'}>
           {MenuItems.map((element, index)=>{
-            return <li key={index} > <a className={element.cName} href='/'>{element.icon?element.icon:null}{element.title}</a> </li>
+            return <li style={{cursor:'pointer'}} key={index} > <Link to={element.url} spy={true} smooth={true} offset={50} duration={500} className={element.cName} >{element.icon?element.icon:null}{element.title}</Link> </li>
           })}
         </ul>
     </nav>
