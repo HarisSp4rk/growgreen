@@ -1,7 +1,7 @@
 import React from 'react'
 import './AboutUsStyles.css'
-import ReportPic from '../../assets/Reports.svg'
-import Charts from '../../assets/Chart.svg'
+import ReportPic from '../../assets/Reports1.svg'
+import Charts from '../../assets/Chart1.svg'
 import bg from '../../assets/AboutUs-bg.svg'
 
 const AboutUs = () => {
