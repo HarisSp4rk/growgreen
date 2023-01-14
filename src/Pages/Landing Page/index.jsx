@@ -13,8 +13,8 @@ const LandingPage = () => {
             <div id='aboutUs'>
             <AboutUs/>
             <Traffic/>
-            </div>
             <ProblemFacing/>
+            </div>
         </div>
     )
 }
