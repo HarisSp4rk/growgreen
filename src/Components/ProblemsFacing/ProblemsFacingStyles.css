@@ -1,0 +1,73 @@
+.ProblemFacing-heading{
+    font-size: 5vw;
+    padding: 10vw 2vw 5vw 2vw;
+    color: #09886F;
+}
+
+.problemfacing-backgroundImage{
+    width: 95vw;
+    height: 60vw;
+    position: absolute;
+    overflow: hidden;
+}
+
+.problemFacing-container{
+    position: relative;
+    width: 100%;
+    /* background: ; */
+    /* border: 2px solid black; */
+    padding: 16px;
+    overflow: hidden;
+    height: 17vw;
+}
+
+.problemFacing-slider{
+    /* border: 2px solid blue; */
+    display: flex;
+    position: absolute;
+    left:0;
+}
+
+.problemFacing-inner-divs{
+    /* border: 2px solid purple; */
+    display: flex;
+    width:50%;
+    justify-content: space-around;
+    font-size: 0.7rem;
+}
+
+
+.problemFacing-inner-divs div img {
+    height: 95%;
+    width: 95%;
+}
+
+.problemFacing-inner-divs div p {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    bottom: 6vw;
+}
+
+.problemFacing-inner-divs div p span {
+    background-color: white;
+    padding:0.5vw 1vw;
+    font-size: 1.5vw;
+    border-radius: 2rem;
+    box-shadow: black 0px 0px 10px 3px;
+}
+
+@keyframes marquee {
+    0% {left:0;}
+    100% {left:-100%;}
+}
+
+.animate{
+    width: 200%;
+    animation: marquee 20s linear infinite;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+/* .animate:hover{
+    animation-play-state: paused;
+} */
