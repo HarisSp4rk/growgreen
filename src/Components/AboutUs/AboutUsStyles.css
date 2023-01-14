@@ -88,7 +88,7 @@
     }
     
     .reports-pic { 
-        width: 100vw; 
+        width: 90vw; 
     }
     
     .charts-pic {
@@ -113,14 +113,22 @@
     
     
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 550px) {
     .aboutUs-right-side {
         margin-top: 0;
     }
-    
+
     .aboutUs-container button{
         height: 35px;
         font-size: 0.6rem;
+    }
+
+    .reports-pic { 
+        top: 2rem;
+    }
+    
+    .charts-pic {
+        bottom: 7rem;
     }
     
 }
