@@ -52,3 +52,25 @@
 .contactUs-button:hover {
     box-shadow: 0px 18px 40px -12px rgba(45, 55, 72, 0.35), inset black 0px 0px 0px 1px;
 }
+
+@media screen and (max-width: 550px) {
+    .HaveAnyQuery-container {
+        flex-direction: column;
+        padding-bottom: 1rem;
+    }
+
+    .HaveAnyQuery-innerDiv2 button {
+        width: 25vw;
+        height: 7vw;
+        font-size: 2vw;
+        margin: 0 3vw;
+    }
+
+    .HaveAnyQuery-innerDiv1 h2 {
+        font-size: 3vw;
+    }
+
+    .HaveAnyQuery-innerDiv1 h1 {
+        font-size: 4vw;
+    }
+}
