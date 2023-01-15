@@ -1,17 +1,17 @@
-.ProblemFacing-heading{
+.ProblemFacing-heading {
     font-size: 5vw;
     padding: 10vw 2vw 5vw 2vw;
     color: #09886F;
 }
 
-.problemfacing-backgroundImage{
+.problemfacing-backgroundImage {
     width: 95vw;
     height: 60vw;
     position: absolute;
     overflow: hidden;
 }
 
-.problemFacing-container{
+.problemFacing-container {
     position: relative;
     width: 100%;
     /* background: ; */
@@ -21,17 +21,17 @@
     height: 17vw;
 }
 
-.problemFacing-slider{
+.problemFacing-slider {
     /* border: 2px solid blue; */
     display: flex;
     position: absolute;
-    left:0;
+    left: 0;
 }
 
-.problemFacing-inner-divs{
+.problemFacing-inner-divs {
     /* border: 2px solid purple; */
     display: flex;
-    width:50%;
+    width: 50%;
     justify-content: space-around;
     font-size: 0.7rem;
 }
@@ -51,23 +51,64 @@
 
 .problemFacing-inner-divs div p span {
     background-color: white;
-    padding:0.5vw 1vw;
+    padding: 0.5vw 1vw;
     font-size: 1.5vw;
     border-radius: 2rem;
     box-shadow: black 0px 0px 10px 3px;
 }
 
 @keyframes marquee {
-    0% {left:0;}
-    100% {left:-100%;}
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -100%;
+    }
 }
 
-.animate{
+.animate {
     width: 200%;
     animation: marquee 20s linear infinite;
     top: 50%;
     transform: translate(0, -50%);
 }
+
 /* .animate:hover{
     animation-play-state: paused;
 } */
+
+
+@media screen and (max-width: 550px) {
+    @keyframes marquee {
+        0% {
+            left: 0;
+        }
+    
+        100% {
+            left: -175%;
+        }
+    }
+    .ProblemFacing-heading {
+        font-size: 6vw;
+    }
+
+    .animate {
+        width: 350%;
+    }
+
+    .problemFacing-container {
+        height: 30vw;
+        margin: 2vw 0;
+        padding: 0;
+    }
+
+    .problemFacing-inner-divs div p {
+        bottom: 12vw;
+
+    }
+
+    .problemFacing-inner-divs div p span {
+        font-size: 3.5vw;
+    }
+}
