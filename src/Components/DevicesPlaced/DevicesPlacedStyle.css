@@ -1,0 +1,15 @@
+.DevicesPlaced-container{
+    background-color: #F5F9FF;
+    color: #2D3748;
+    margin: 6vw 0 0 0;
+    padding: 1vw 5vw 0 5vw;
+}
+
+.DevicesPlaced-container h1 {
+    font-size: 4vw;
+    padding: 1vw 11vw;
+}
+
+.DevicesPlaced-container img {
+    width: 85vw;
+}
