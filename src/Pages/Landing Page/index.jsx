@@ -1,6 +1,7 @@
 import React from 'react'
 import AboutUs from '../../Components/AboutUs'
 import DevicesPlaced from '../../Components/DevicesPlaced'
+import Footer from '../../Components/Footer'
 import HaveAnyQuery from '../../Components/HaveAnyQuery'
 import Intro from '../../Components/Intro'
 import ProblemFacing from '../../Components/ProblemsFacing'
@@ -19,6 +20,7 @@ const LandingPage = () => {
             <DevicesPlaced/>
             <HaveAnyQuery/>
             </div>
+            <Footer/>
         </div>
     )
 }
