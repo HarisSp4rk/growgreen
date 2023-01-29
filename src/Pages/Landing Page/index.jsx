@@ -4,12 +4,14 @@ import DevicesPlaced from '../../Components/DevicesPlaced'
 import Footer from '../../Components/Footer'
 import HaveAnyQuery from '../../Components/HaveAnyQuery'
 import Intro from '../../Components/Intro'
+import Navbar from '../../Components/Navbar'
 import ProblemFacing from '../../Components/ProblemsFacing'
 import Traffic from '../../Components/Traffic'
 
 const LandingPage = () => {
     return (
         <div >
+            <Navbar/>
             <div id='home'>
             <Intro />
             </div>
