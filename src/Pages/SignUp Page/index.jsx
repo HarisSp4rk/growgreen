@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SideImg from '../../assets/Login/login.svg'
 import logo from '../../assets/Login/LoginLogo.svg'
-import './signUpStyles.css'
+import './SignUpStyles.css'
 
 const SignUpPage = () => {
   const [signUpData, setSignUpData] = useState({name:'', email:'', password:'', confirmPassword:''})
