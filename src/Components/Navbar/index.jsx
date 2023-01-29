@@ -17,7 +17,7 @@ const Navbar = () => {
         </div>
         <ul className={clicked?'nav-menu active':'nav-menu'}>
           {MenuItems.map((element, index)=>{
-            return <li style={{cursor:'pointer'}} key={index} > <Link to={element.url} spy={true} smooth={true} offset={50} duration={500} className={element.cName} >{element.icon?element.icon:null}{element.title}</Link> </li>
+            return <li style={{cursor:'pointer'}} key={index} > {element.title!=='Log In'?<Link to={element.url} spy={true} smooth={true} offset={50} duration={500} className={element.cName} >{element.icon?element.icon:null}{element.title}</Link>:element.tag }</li>
           })}
         </ul>
     </nav>
