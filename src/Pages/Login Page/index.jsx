@@ -2,14 +2,14 @@ import React from 'react'
 import { useState } from 'react'
 import SideImg from '../../assets/Login/login.svg'
 import logo from '../../assets/Login/LoginLogo.svg'
+import { Link } from "react-router-dom";
 import './loginStyles.css'
 
 const LoginPage = () => {
-  const [loginData, setLoginData] = useState({email:'', password:''})
+  const [loginData, setLoginData] = useState({ email: '', password: '' })
 
   const handleChange = (e) => {
-    e.target.name==='login-email'?setLoginData({...loginData, email:'asdf'} ): setLoginData({...loginData, password:'asdf'} );
-    console.log(e.target.value)
+    e.target.name === 'login-email' ? setLoginData({ ...loginData, email: e.target.value }) : setLoginData({ ...loginData, password: e.target.value });
   }
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ const LoginPage = () => {
       </div>
       <div className='login-container-rightSide'>
         <div className='login-logoImg'>
-          <img src={logo} alt="" />
+          <Link to="/"><img src={logo} alt="" /></Link>
         </div>
         <div className='login-innerdiv'>
           <form onSubmit={handleSubmit}>
@@ -31,11 +31,11 @@ const LoginPage = () => {
 
             <div className='login-input'>
               <label htmlFor="login-email">Email</label>
-              <input type="text" name="login-email" id="login-email" onChange={handleChange} placeholder='Enter Email' required/>
+              <input type="email" name="login-email" id="login-email" onChange={handleChange} placeholder='Enter Email' required />
             </div>
             <div className='login-input'>
               <label htmlFor="login-password">Password</label>
-              <input type="password" name="login-password" id="login-password" onChange={handleChange} placeholder='Enter Password' required/>
+              <input type="password" name="login-password" id="login-password" onChange={handleChange} placeholder='Enter Password' required />
             </div>
             <div className='login-checkBox'>
               <div>
@@ -46,10 +46,10 @@ const LoginPage = () => {
                 <a href="">Forget Password?</a>
               </div>
             </div>
-          <button type="submit" >Login Now</button>
+            <button type="submit" >Login Now</button>
           </form>
           <div className='login-JoinFree'>
-            Dont have an account? <a href="">Join free today</a>
+            Dont have an account? <Link to={'/signup'}>Join free today</Link>
           </div>
         </div>
       </div>
