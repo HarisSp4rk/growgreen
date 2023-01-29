@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import SideImg from '../../assets/Login/login.svg'
-import logo from '../../assets/login/LoginLogo.svg'
+import logo from '../../assets/Login/LoginLogo.svg'
 import './loginStyles.css'
 
 const LoginPage = () => {
@@ -35,7 +35,7 @@ const LoginPage = () => {
             </div>
             <div className='login-input'>
               <label htmlFor="login-password">Password</label>
-              <input type="password" name="login-password" id="login-password" onChange={handleChange} placeholder='Enter Password' />
+              <input type="password" name="login-password" id="login-password" onChange={handleChange} placeholder='Enter Password' required/>
             </div>
             <div className='login-checkBox'>
               <div>
