@@ -1,11 +1,9 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from './Components/Navbar'
 import LandingPage from './Pages/Landing Page'
-
-
-import './App.css'
 import LoginPage from './Pages/Login Page'
+import SignUpPage from './Pages/SignUp Page';
+import './App.css'
 
 const App = () => {
   return (
@@ -14,10 +12,8 @@ const App = () => {
         <Routes>
           <Route index element={<LandingPage />} />
           <Route path="login" element={<LoginPage />} />
+          <Route path="signup" element={<SignUpPage />} />
         </Routes>
-        {/* <Navbar/>
-        <LandingPage/>  */}
-        {/* <LoginPage/> */}
       </BrowserRouter>
     </div>
   )
