@@ -17,9 +17,7 @@ const LoginPage = () => {
   }
   return (
     <div className='login-container'>
-      <div className='login-container-leftSide' style={{ backgroundImage: `url(${SideImg})` }}>
-        {/* <img src={SideImg} alt="Image" /> */}
-      </div>
+      <div className='login-container-leftSide' style={{ backgroundImage: `url(${SideImg})` }}></div>
       <div className='login-container-rightSide'>
         <div className='login-logoImg'>
           <Link to="/"><img src={logo} alt="" /></Link>
