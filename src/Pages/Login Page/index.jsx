@@ -3,17 +3,40 @@ import { useState } from 'react'
 import SideImg from '../../assets/Login/login.svg'
 import logo from '../../assets/Login/LoginLogo.svg'
 import { Link } from "react-router-dom";
+import { gql,  useMutation } from '@apollo/client';
 import './loginStyles.css'
+import { useEffect } from 'react';
+
+const User_Login = gql`
+  mutation UserLogin($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      id
+      token
+    }
+  }
+`;
+
 
 const LoginPage = () => {
+  const [login, { data, loading, error }] = useMutation(User_Login);
+  useEffect(()=>{console.log(data)},[data])
   const [loginData, setLoginData] = useState({ email: '', password: '' })
 
   const handleChange = (e) => {
     e.target.name === 'login-email' ? setLoginData({ ...loginData, email: e.target.value }) : setLoginData({ ...loginData, password: e.target.value });
   }
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(loginData)
+    try {
+      await login({ variables: { email: loginData.email, password: loginData.password } });
+      console.log(loginData)
+      console.log(error, '123123')
+      console.log(loading)
+      
+    } catch (error) {
+      console.log(error.message)
+    }
+    
   }
   return (
     <div className='login-container'>

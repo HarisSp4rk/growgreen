@@ -30,10 +30,6 @@
     text-align: left;
 }
 
-.signUp-innerdiv h3{
-    font-weight: 400;
-}
-
 .signUp-innerdiv h1{
     margin-bottom: 1.5rem;
 }
@@ -53,22 +49,6 @@
     padding: 0.7rem 0.7rem;
     width: 100%;
     margin: 0.8rem 0 ;
-}
-
-.signUp-checkBox{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.8rem;
-    height: 3rem;
-}
-
-.signUp-checkBox input{
-    margin: 0 0.5rem 0 0;
-}
-.signUp-checkBox div a{
-    text-decoration: none;
-    color: #2C5282;
 }
 
 .signUp-container-rightSide button{
