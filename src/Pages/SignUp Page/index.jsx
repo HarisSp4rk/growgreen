@@ -1,20 +1,51 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SideImg from '../../assets/Login/login.svg'
 import logo from '../../assets/Login/LoginLogo.svg'
+import { gql,  useMutation } from '@apollo/client';
 import './SignUpStyles.css'
 
+
+const User_Register = gql`
+  mutation UserRegister ($name: String!,$email: String!,$password: String!, $confirmPassword: String!){
+    register(registerInput: {
+        name: $name,
+        password: $password,
+        confirmPassword: $confirmPassword,
+        email: $email
+    }) {
+        id
+        token
+        name
+        email
+    }
+}
+
+
+`;
+
 const SignUpPage = () => {
+  const [register, { data, loading, error }] = useMutation(User_Register);
+  useEffect(()=>{console.log(data)},[data])
   const [signUpData, setSignUpData] = useState({name:'', email:'', password:'', confirmPassword:''})
 
   const handleChange = (e) => {
-    e.target.name==='signUp-email'?setSignUpData({...signUpData, email:e.target.value} ): setSignUpData({...signUpData, password:e.target.value} );
+    e.target.name==='signUp-email'?setSignUpData({...signUpData, email:e.target.value} ):e.target.name==='signUp-name'? setSignUpData({...signUpData, name:e.target.value} ): e.target.name==='signUp-confirmPassword'? setSignUpData({...signUpData, confirmPassword:e.target.value} ):setSignUpData({...signUpData, password:e.target.value} );
   }
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log(signUpData)
+    try {
+      await register({ variables: { name:signUpData.name, password: signUpData.password, confirmPassword: signUpData.confirmPassword, email: signUpData.email  } });
+      console.log(signUpData)
+      console.log(error, '123123')
+      console.log(loading)
+    } catch (error) {
+      console.log((error.message))
+    }
+    console.log(signUpData);
   }
+  if (loading) return <p>Loading...</p>;
   return (
     <div className='signUp-container'>
       <div className='signUp-container-leftSide' style={{ backgroundImage: `url(${SideImg})` }}>
@@ -44,6 +75,9 @@ const SignUpPage = () => {
             </div>
           <button type="submit" >Sign Up</button>
           </form>
+          <div className='signUp-JoinFree'>
+            Already have an account? <Link to={'/login'}>Log In</Link>
+          </div>
         </div>
       </div>
     </div>
