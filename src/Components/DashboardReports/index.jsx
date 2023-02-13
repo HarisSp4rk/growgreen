@@ -112,7 +112,7 @@ const DashboardReports = () => {
         <div className='dashboardReports-dropdowninner'>
           <div className='dashboardReports-dropdownDiv'>
             <select onChange={(e) => { setBy(Number(e.target.value)); }} value={by}>
-              <option value="1">past 24 Hours</option>
+              <option value="1">Past 24 Hours</option>
               <option value="2">Past 3 Days</option>
               <option value="3">Past Week</option>
               <option value="4">Past Month</option>
@@ -142,7 +142,7 @@ const DashboardReports = () => {
             <h5>
               <span>Activity</span>
               <select onChange={(e)=>{setSensorType(e.target.value)}} value={sensor_type}>
-                <option value="temperature">temperature</option>
+                <option value="temperature">Temperature</option>
                 <option value="carbondioxide">CO2</option>
                 <option value="carbonmonoxide">CO</option>
                 <option value="humidity">Humidity</option>

@@ -63,11 +63,10 @@
     padding-left: 1rem;
 }
 
-.dashboardReports-dropdownDiv select {
-    border-width: 0 0 2px 0;
-    border-bottom: 2px solid gray;
+.dashboardReports-dropdownDiv select, .reports-innerbarchartdiv h5 select {
+    cursor: pointer;
+    border: none;
     background-color: transparent;
-    padding-bottom: 5px;
 }
 
 .dashboardReports-ActiveSensors div {
