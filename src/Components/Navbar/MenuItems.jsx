@@ -11,7 +11,7 @@ export const MenuItems = [
         title: "Dashboard",
         url: "/dashboard",
         cName: "nav-links",
-        tag:<Link to={'/dashboard'} className='nav-links'>Dashboard</Link>
+        tag:<Link to={'/dashboard/reports'} className='nav-links'>Dashboard</Link>
     },
     {
         title: "About Us",

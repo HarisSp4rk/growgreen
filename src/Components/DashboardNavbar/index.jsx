@@ -17,7 +17,6 @@ const DashboardNavbar = () => {
           {DashboardMenuItems.map((element, index)=>{
             return <li key={index}> <NavLink to={element.link} className="dashboard-NavLinks"><span>{element.icon}</span><span>{element.name}</span></NavLink></li>
           })}
-
         </ul>
       </div>
     </div>
