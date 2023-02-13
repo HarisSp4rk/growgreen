@@ -23,9 +23,9 @@ export const DashboardMenuItems = [
         link: 'corelations'
     },
     {
-        name: 'Recommendations', 
+        name: 'Active Sensors', 
         icon: <MdAssignment/>,
-        link: 'recommendations'
+        link: 'activesensors'
     },
     {
         name: 'Settings', 

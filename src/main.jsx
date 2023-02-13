@@ -5,7 +5,7 @@ import './index.css'
 
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 const client = new ApolloClient({
-  uri: 'https://f505-117-102-52-129.eu.ngrok.io/graphql',
+  uri: 'https://e27b-39-34-136-237.ap.ngrok.io/graphql',
   cache: new InMemoryCache(),
 });
 
