@@ -31,7 +31,6 @@
     background-color: unset;
     cursor: pointer;
     border: none;
-
 }
 
 .dashboardReports-heading button:hover {
@@ -47,13 +46,32 @@
 }
 
 .dashboardReports-ActiveSensors {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 
 }
 
+.dashboardReports-dropdowninner {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboardReports-dropdownDiv {
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.dashboardReports-dropdownDiv select {
+    border-width: 0 0 2px 0;
+    border-bottom: 2px solid gray;
+    background-color: transparent;
+    padding-bottom: 5px;
+}
+
 .dashboardReports-ActiveSensors div {
+    cursor: pointer;
     margin: 0.5rem auto;
     width: 30%;
     height: 10rem;
@@ -95,16 +113,21 @@
     display: flex;
 }
 
-.dashboardReports-barChart .reports-innerbarchartdiv h5 , .ReportsAlert-innerdiv h5 {
+.dashboardReports-barChart .reports-innerbarchartdiv h5,
+.ReportsAlert-innerdiv h5 {
     height: 11%;
     width: 90%;
     border-bottom: 2px solid rgba(228, 229, 231, 1);
     margin: auto;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     color: rgba(0, 0, 0, 0.7);
     font-weight: 600;
+}
+
+.reports-innerbarchartdiv h5 {
+    display: flex;
+    justify-content: space-between;
 }
 
 .dashboardReports-barChart .reports-innerbarchartdiv {
@@ -174,19 +197,19 @@
 
 .dashboardReports-Alert {
     display: flex;
-    justify-content: center;  
-    flex-wrap: wrap;  
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.ReportsAlert-container{
+.ReportsAlert-container {
     width: 50%;
 }
 
-.ReportsAlert-innerdiv{
+.ReportsAlert-innerdiv {
     background-color: white;
     border-radius: 20px;
     border: 1px solid #EFF0F6;
-    height:17rem;
+    height: 17rem;
     width: 95%;
     margin: 1rem auto;
 }
@@ -197,25 +220,27 @@
     border: none;
 }
 
-.ReportsAlert-eachRow{
+.ReportsAlert-eachRow {
     display: flex;
     width: 90%;
     margin: 1rem auto;
     justify-content: space-between;
-    
+
 }
 
-.ReportsAlert-eachRow img{
+.ReportsAlert-eachRow img {
     width: 12%;
 }
-.ReportsAlert-eachRow span{
+
+.ReportsAlert-eachRow span {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 18%;
     font-size: 0.8rem;
 }
-.ReportsAlert-progressbar{
+
+.ReportsAlert-progressbar {
     width: 65%;
     margin: auto;
     display: flex;
@@ -231,7 +256,8 @@
     margin-top: 0.4rem;
     border-radius: 20px;
 }
-.alertProgressBar-container div{
+
+.alertProgressBar-container div {
     height: 0.7rem;
     border-radius: 20px;
     display: flex;
