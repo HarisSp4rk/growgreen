@@ -10,6 +10,7 @@ import DashboardFilter from './Components/DashboardFilter';
 import DashboardCorelations from './Components/DashboardCorelations';
 import DashboardSettings from './Components/DashboardSettings';
 import DashboardActiveSensors from './Components/DashboardActiveSensors';
+import DashboardActiveSensorsDetails from './Components/DashboardActiveSensorsDetails';
 
 const App = () => {
   return (
@@ -18,12 +19,13 @@ const App = () => {
         <Routes>
           <Route index element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/dashboard/" element={<Dashboard/>} >
-            <Route path='reports' element={<DashboardReports/>}/> 
-            <Route path='filter' element={<DashboardFilter/>}/> 
-            <Route path='corelations' element={<DashboardCorelations/>}/> 
-            <Route path='activesensors' element={<DashboardActiveSensors/>}/> 
-            <Route path='settings' element={<DashboardSettings/>}/> 
+          <Route path="/dashboard/" element={<Dashboard />} >
+            <Route path='reports' element={<DashboardReports />} />
+            <Route path='filter' element={<DashboardFilter />} />
+            <Route path='corelations' element={<DashboardCorelations />} />
+            <Route path='activesensors' element={<DashboardActiveSensors />} />
+            <Route path='sensordetails' element={<DashboardActiveSensorsDetails />} />
+            <Route path='settings' element={<DashboardSettings />} />
           </Route>
           <Route path="/signup" element={<SignUpPage />} />
         </Routes>

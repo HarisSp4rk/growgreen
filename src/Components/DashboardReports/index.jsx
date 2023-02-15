@@ -12,7 +12,12 @@ import { reportsData } from './reportsData'
 import { gql, useQuery } from '@apollo/client';
 import safe from '../../assets/ReportsAlert/safe.jpg'
 import danger from '../../assets/ReportsAlert/danger.jpg'
-import { Navigate, NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { RxHamburgerMenu } from 'react-icons/rx'
+import { DashboardMenuItems } from '../DashboardNavbar/DashboardNavebarMenuItems'
+import '../DashboardNavbar/DashboardNavbar.css'
+import '../../Pages/Dashboard/DashboardStyles.css'
+
 
 const GET_SENSORS = gql`
 query dashboard($by: Int!, $sensor_type: String!){
@@ -24,6 +29,7 @@ query dashboard($by: Int!, $sensor_type: String!){
 
 
 const DashboardReports = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate()
   const [by, setBy] = useState(1)
   const [sensor_type, setSensorType] = useState("temperature")
@@ -50,8 +56,8 @@ const DashboardReports = () => {
       let months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN",
         "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
       let temp = []
-      for (let i=1; i<=12; i++){
-        temp.push({month:months[parseInt(data.getgraph.buckets[i].key_as_string.split("-")[1], 10) - 1], percentage:data.getgraph.buckets[i].avg_percentage.value==null?0:data.getgraph.buckets[i].avg_percentage.value})
+      for (let i = 1; i <= 12; i++) {
+        temp.push({ month: months[parseInt(data.getgraph.buckets[i].key_as_string.split("-")[1], 10) - 1], percentage: data.getgraph.buckets[i].avg_percentage.value == null ? 0 : data.getgraph.buckets[i].avg_percentage.value })
       }
       console.log(temp)
       setMappingBarChartData(temp)
@@ -105,8 +111,18 @@ const DashboardReports = () => {
   return (
     <div className='dashboardReports-container'>
       <div className='dashboardReports-heading'>
+        <div className='dashboard-hamburger-icon' onClick={() => { setMobileMenuOpen(!mobileMenuOpen) }}><RxHamburgerMenu /></div>
         <h2>Reports</h2>
         <button><IoMdDownload />Download</button>
+      </div>
+      <div className='dashboard-mobile-menuItems' style={{ display: mobileMenuOpen ? 'flex' : 'none' }}>
+        <div className='dashboardNavbar-menuItems'>
+          <ul>
+            {DashboardMenuItems.map((element, index) => {
+              return <li key={index}> <NavLink to={'../' + element.link} className="dashboard-NavLinks"><span>{element.icon}</span><span>{element.name}</span></NavLink></li>
+            })}
+          </ul>
+        </div>
       </div>
       <div className='dashboardReports-Activity'>
         <div className='dashboardReports-dropdowninner'>
@@ -124,9 +140,9 @@ const DashboardReports = () => {
             {mappingReportsData.map((element, index) => {
               return (
                 element.title === 'Active Sensors' ?
-                  <div key={index} onClick={()=>{navigate('../activesensors')}}>
+                  <div key={index} onClick={() => { navigate('../activesensors') }}>
                     <h5>{element.title}</h5>
-                    <h1>{data ? data.getonlinedevices.online_devices : element.value}<span>{data ? '/' + data.getonlinedevices.total_devices : element.extra}</span></h1>    
+                    <h1>{data ? data.getonlinedevices.online_devices : element.value}<span>{data ? '/' + data.getonlinedevices.total_devices : element.extra}</span></h1>
                   </div> :
                   <div key={index}>
                     <h5>{element.title}</h5>
@@ -141,7 +157,7 @@ const DashboardReports = () => {
           <div className='reports-innerbarchartdiv'>
             <h5>
               <span>Activity</span>
-              <select onChange={(e)=>{setSensorType(e.target.value)}} value={sensor_type}>
+              <select onChange={(e) => { setSensorType(e.target.value) }} value={sensor_type}>
                 <option value="temperature">Temperature</option>
                 <option value="carbondioxide">CO2</option>
                 <option value="carbonmonoxide">CO</option>

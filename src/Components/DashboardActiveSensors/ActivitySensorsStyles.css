@@ -82,3 +82,9 @@
     border: 3px solid initial;
     border-radius: 10rem;
 }
+
+@media screen and (max-width: 800px) {
+    .ActiveSensors-TabularData-container {
+        overflow: scroll;
+    }
+}

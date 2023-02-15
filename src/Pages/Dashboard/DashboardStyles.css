@@ -1,13 +1,45 @@
 .Dashboard-container{
     display: flex;
     background-color: rgba(249, 249, 249, 1);
+    /* height: 100vh;
+    overflow: hidden; */
 }
 
 .Dashboard-sideMenu{
     width: 15%;
-
+    
 }
-
 .Dashboard-main{
     width: 85%;
+}
+
+.dashboard-hamburger-icon{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-left: 2vw;
+}
+
+.dashboard-mobile-menuItems{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+
+@media screen and (max-width: 800px) {
+    .dashboard-hamburger-icon{
+        display: flex;
+    }
+    .dashboard-mobile-menuItems{
+        display: flex;
+    }
+    .Dashboard-sideMenu{
+        display: none;
+    }
+    .Dashboard-main{
+        width: 100%;
+    }
 }

@@ -1,12 +1,11 @@
 import React from 'react'
 import logo from '../../assets/logo.svg'
 import './DashboardNavbar.css'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { DashboardMenuItems } from './DashboardNavebarMenuItems'
 
 const DashboardNavbar = () => {
   return (
-
     <div className='dashboardNavbar-container'>
       <div className='dashboardNavbar-logo'>
         <img src={logo} alt="" />
