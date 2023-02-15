@@ -4,6 +4,15 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import './ActiveSennsorDetailsStyles.css'
 import 'leaflet/dist/leaflet.css';
 
+import iconMarker from 'leaflet/dist/images/marker-icon.png'
+import iconRetina from 'leaflet/dist/images/marker-icon-2x.png'
+import iconShadow from 'leaflet/dist/images/marker-shadow.png'
+
+const icon = L.icon({ 
+    iconRetinaUrl: iconMarker, 
+    iconUrl: iconRetina, 
+    shadowUrl: iconShadow 
+});
 
 const DashboardActiveSensorsDetails = () => {
     const data = {
@@ -32,11 +41,12 @@ const DashboardActiveSensorsDetails = () => {
 
                     <MapContainer style={{ height: '100%', width: '100%' }} center={[data.lat, data.long]} zoom={13}>
                         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                        <Marker position={[data.lat, data.long]}>
+                        <Marker alt='marker' position={[data.lat, data.long]} icon={icon}>
                             <Popup>
                                 Sensor Type <br /> <b>{location.state.sensor_type}</b>
                             </Popup>
                         </Marker>
+
                     </MapContainer>
                 </div>
 
