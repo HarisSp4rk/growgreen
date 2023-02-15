@@ -5,8 +5,7 @@ import './DashboardStyles.css'
 
 const Dashboard = () => {
     return (
-        <div className='Dashboard-container'>
-            
+        <div className='Dashboard-container'>  
             <div className='Dashboard-sideMenu'>
                 <DashboardNavbar />
             </div>
