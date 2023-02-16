@@ -1,10 +1,11 @@
 .DashboardActiveSensorsDetails-inner-container{
     /* border: 2px solid darkblue; */
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: flex-start;
     text-align: left;
+    flex-wrap: wrap;
     /* margin-top: 3rem; */
 }
 .DashboardActiveSensorsDetails-inner-elements{
@@ -13,6 +14,7 @@
     width: 50%;
     justify-content: flex-start;
     align-items: center;
+    flex-wrap: nowrap;
     margin-top: 2rem;
 }
 .DashboardActiveSensorsDetails-inner-elements :nth-of-type(1){
@@ -29,8 +31,8 @@
 .DashboardActiveSensorDetails-openStreets{
     border: 2px solid black;
     width: 100%;
-    height: 30vw;
-    margin-top: 2rem;
+    height: 45vh;
+    margin: 2rem 0;
 }
 
 @media screen and (max-width: 800px) {
@@ -38,7 +40,10 @@
         width: 100%;
     }
     .DashboardActiveSensorsDetails-inner-elements :nth-of-type(1) {
-        width: unset;
+        width: 25%;
+    }
+    .DashboardActiveSensorsDetails-inner-elements :nth-of-type(2) {
+        width: 75%;
     }
     .DashboardActiveSensorDetails-openStreets{
         margin-top: 3rem;
