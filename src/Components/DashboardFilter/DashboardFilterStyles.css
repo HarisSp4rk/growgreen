@@ -1,0 +1,47 @@
+.DashboardFilter-container{
+    /* border: 3px solid red; */
+    display: flex;
+    flex-direction: column;
+}
+.DashboardFilter-dropdown-filter{
+    /* background-color: blue; */
+    display: flex;
+    margin: 1rem 0;
+
+}
+.DashboardFilter-dropdown-innerContainer{
+    width: 30%;
+    /* background-color: black; */
+    margin: auto;
+}
+.DashboardFilter-dropdown-innerContainer div, .DashboardFilter-dropdown-innerContainer select{
+    width: 90%;
+    background-color: white;
+    border: 2px solid #EFF0F6;
+    border-radius: 1rem;
+    padding: 0.3rem 1rem;
+    margin: 1rem auto;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+}
+.DashboardFilter-dropdown-innerContainer div{
+    cursor: no-drop;
+}
+.DashboardFilter-dropdown-innerContainer select{
+    cursor: pointer;
+
+}
+
+
+@media screen and (max-width: 800px){
+    .DashboardFilter-dropdown-filter{
+        border: 2px solid orange;
+        flex-direction: column;
+    }
+    .DashboardFilter-dropdown-innerContainer{
+        margin: unset;
+        width: 80%;
+    }
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, CircleMarker } from 'react-leaflet';
 import './ActiveSennsorDetailsStyles.css'
 import 'leaflet/dist/leaflet.css';
 
@@ -8,10 +8,10 @@ import iconMarker from 'leaflet/dist/images/marker-icon.png'
 import iconRetina from 'leaflet/dist/images/marker-icon-2x.png'
 import iconShadow from 'leaflet/dist/images/marker-shadow.png'
 
-const icon = L.icon({ 
-    iconRetinaUrl: iconMarker, 
-    iconUrl: iconRetina, 
-    shadowUrl: iconShadow 
+const icon = L.icon({
+    iconRetinaUrl: iconMarker,
+    iconUrl: iconRetina,
+    shadowUrl: iconShadow
 });
 
 const DashboardActiveSensorsDetails = () => {
@@ -32,10 +32,16 @@ const DashboardActiveSensorsDetails = () => {
             </div>
             <div className='DashboardActiveSensorsDetails-inner-container'>
                 <div className='DashboardActiveSensorsDetails-inner-elements'>
-                    <div>Sensor Id : </div><div>{location.state.id}</div>
+                    <div>Sensor Id: </div><div>{location.state.id}</div>
                 </div>
                 <div className='DashboardActiveSensorsDetails-inner-elements'>
-                    <div>Location : </div><div>{data.name}</div>
+                    <div>Sensor Type: </div><div>{location.state.sensor_type}</div>
+                </div>
+                <div className='DashboardActiveSensorsDetails-inner-elements'>
+                    <div>Location: </div><div>{data.name}</div>
+                </div>
+                <div className='DashboardActiveSensorsDetails-inner-elements'>
+                    <div>Last Active Status: </div><div>{Date()}</div>
                 </div>
                 <div className='DashboardActiveSensorDetails-openStreets'>
 
@@ -46,7 +52,6 @@ const DashboardActiveSensorsDetails = () => {
                                 Sensor Type <br /> <b>{location.state.sensor_type}</b>
                             </Popup>
                         </Marker>
-
                     </MapContainer>
                 </div>
 
