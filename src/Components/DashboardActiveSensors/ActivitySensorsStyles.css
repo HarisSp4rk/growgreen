@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     width: 95%;
-    margin: auto;
-    height: 100vh;
+    margin: 0 auto 2rem auto;
+    /* height: 100vh; */
 }
 
 .dashboardActivitySensors-heading {

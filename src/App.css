@@ -120,3 +120,41 @@ div{
       transform: rotate(360deg);
     }
   }
+
+  .recommendation-container{
+    /* border: 2px solid brown;
+    background-color: yellow;
+     */
+     /* border: 2px solid green; */
+    
+    cursor: default;
+    font-weight: 600;
+  }
+  
+  /* The element to apply the animation to */
+  .recommendation-container {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .recommendation-container div{
+    display: flex;
+    animation: slide 40s linear infinite;
+  }
+
+  .recommendation-container div span{
+    margin-right: 20px;
+  }
+
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    3%{
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }

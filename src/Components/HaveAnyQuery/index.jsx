@@ -1,7 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import './HaveAnyQueryStyles.css'
 
 const HaveAnyQuery = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='HaveAnyQuery-container'>
         <div className='HaveAnyQuery-innerDiv1'>
@@ -9,7 +12,7 @@ const HaveAnyQuery = () => {
             <h1>Let’s experience our Dashboard</h1>
         </div>
         <div className='HaveAnyQuery-innerDiv2'>
-            <button className='button1'>View Dashboard</button>
+            <button onClick={()=>{navigate('/dashboard/reports')}} className='button1'>View Dashboard</button>
             <button className='contactUs-button'>Contact Us</button>
         </div>
     </div>

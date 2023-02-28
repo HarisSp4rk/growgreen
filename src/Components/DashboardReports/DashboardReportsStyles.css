@@ -63,7 +63,8 @@
     padding-left: 1rem;
 }
 
-.dashboardReports-dropdownDiv select, .reports-innerbarchartdiv h5 select {
+.dashboardReports-dropdownDiv select,
+.reports-innerbarchartdiv h5 select {
     cursor: pointer;
     border: none;
     background-color: transparent;
@@ -187,7 +188,7 @@
 
 }
 
-.ActivityBar-container div {
+.ActivityBar-container .ActivityBar-innerContainer {
     border-radius: 10px;
     background-color: rgba(27, 89, 248, 0.8);
     width: 100%;
@@ -264,37 +265,46 @@
 }
 
 @media screen and (max-width: 800px) {
-    .dashboardReports-Activity{
+    .dashboardReports-Activity {
         flex-direction: column;
     }
-    .dashboardReports-dropdowninner{
+
+    .dashboardReports-dropdowninner {
         width: 100%;
     }
+
     .dashboardReports-ActiveSensors div {
         padding-top: 4vw;
         height: 8rem;
     }
+
     .dashboardReports-ActiveSensors div h5 {
         font-size: 2.9vw;
     }
+
     .dashboardReports-ActiveSensors div h1 {
         height: 50%;
         font-size: 6.5vw;
     }
+
     .dashboardReports-barChart {
         margin-top: 1rem;
         width: 100%;
     }
+
     .barchart-bottom-container {
         font-size: 2.5vw;
     }
+
     .dashboardReports-Alert {
         flex-direction: column;
         margin-top: 1rem;
     }
+
     .ReportsAlert-container {
         width: 100%;
     }
+
     .ReportsAlert-eachRow span {
         justify-content: center;
         flex-direction: column;

@@ -17,6 +17,8 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 import { DashboardMenuItems } from '../DashboardNavbar/DashboardNavebarMenuItems'
 import '../DashboardNavbar/DashboardNavbar.css'
 import '../../Pages/Dashboard/DashboardStyles.css'
+import '../../App.css'
+import DownloadCSVModal from '../../Modals/DownloadCSVModal'
 
 
 const GET_SENSORS = gql`
@@ -29,6 +31,7 @@ query dashboard($by: Int!, $sensor_type: String!){
 
 
 const DashboardReports = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate()
   const [by, setBy] = useState(1)
@@ -38,13 +41,8 @@ const DashboardReports = () => {
   // const { loading, error, data } = useQuery(GET_SENSORS);
   const { loading, error, data } = useQuery(GET_SENSORS, {
     variables: { by, sensor_type },
-
   });
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
-    });
     loading ? console.log('loading...') : console.log(data)
     if (!loading) {
       console.log(data)
@@ -56,7 +54,8 @@ const DashboardReports = () => {
       let months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN",
         "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
       let temp = []
-      for (let i = 1; i <= 12; i++) {
+      console.log(data.getgraph.buckets.length)
+      for (let i = 0; i < data.getgraph.buckets.length; i++) {
         temp.push({ month: months[parseInt(data.getgraph.buckets[i].key_as_string.split("-")[1], 10) - 1], percentage: data.getgraph.buckets[i].avg_percentage.value == null ? 0 : data.getgraph.buckets[i].avg_percentage.value })
       }
       console.log(temp)
@@ -106,14 +105,15 @@ const DashboardReports = () => {
 
   // },[by])
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <div style={{ marginTop: '10rem', height: '100vh' }} className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>;
   // if (error) return <p>Error : {error.message}</p>;
   return (
     <div className='dashboardReports-container'>
+      {isOpen && <DownloadCSVModal setIsOpen={setIsOpen}/>}
       <div className='dashboardReports-heading'>
         <div className='dashboard-hamburger-icon' onClick={() => { setMobileMenuOpen(!mobileMenuOpen) }}><RxHamburgerMenu /></div>
         <h2>Reports</h2>
-        <button><IoMdDownload />Download</button>
+        <button onClick={()=>{setIsOpen(true)}}><IoMdDownload />Download</button>
       </div>
       <div className='dashboard-mobile-menuItems' style={{ display: mobileMenuOpen ? 'flex' : 'none' }}>
         <div className='dashboardNavbar-menuItems'>
@@ -183,11 +183,11 @@ const DashboardReports = () => {
                   })}
                 </div>
               </div>
-              <div className='barchart-bottom-container'>
+              {/* <div className='barchart-bottom-container'>
                 {mappingBarChartData.map((element, index) => {
                   return <span key={index}>{element.month}</span>
                 })}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

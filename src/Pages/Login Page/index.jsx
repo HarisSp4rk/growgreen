@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { gql,  useMutation } from '@apollo/client';
 import './loginStyles.css'
 import { useEffect } from 'react';
+import '../../App.css'
 
 const User_Login = gql`
   mutation UserLogin($email: String!, $password: String!) {
@@ -38,6 +39,8 @@ const LoginPage = () => {
     }
     
   }
+  if (loading) return <div style={{ marginTop: '10rem', height:'100vh' }} className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>;
+
   return (
     <div className='login-container'>
       <div className='login-container-leftSide' style={{ backgroundImage: `url(${SideImg})` }}></div>

@@ -4,6 +4,7 @@ import DashboardNavbar from '../../Components/DashboardNavbar'
 import './DashboardStyles.css'
 
 const Dashboard = () => {
+
     return (
         <div className='Dashboard-container'>  
             <div className='Dashboard-sideMenu'>
