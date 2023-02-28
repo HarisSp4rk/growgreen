@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { DashboardMenuItems } from '../DashboardNavbar/DashboardNavebarMenuItems';
 import '../../Pages/Dashboard/DashboardStyles.css'
 import { RecommendationsContext } from '../../Contexts/RecommendationsContext';
-import '../DashboardGasTemperature/DashboardtemperatureStyles.css'
+import '../DashboardGasTemperature/DashboardTemperatureStyles.css'
 import '../DashboardFilter/DashboardFilterStyles.css'
 
 const DashboardRecommendations = () => {
