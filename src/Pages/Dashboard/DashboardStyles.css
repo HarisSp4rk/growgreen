@@ -11,6 +11,7 @@
 }
 .Dashboard-main{
     width: 85%;
+    min-height: 100vh;
 }
 
 .dashboard-hamburger-icon{
@@ -42,4 +43,16 @@
     .Dashboard-main{
         width: 100%;
     }
+}
+
+.dropDown-TimePeriod{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropDown-TimePeriod-innerDiv select{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }

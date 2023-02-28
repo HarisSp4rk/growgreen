@@ -71,7 +71,7 @@ const SignUpPage = () => {
             </div>
             <div className='signUp-input'>
               <label htmlFor="signUp-confirmPassword">Confirm Password</label>
-              <input type="confirmPassword" name="signUp-confirmPassword" id="signUp-confirmPassword" onChange={handleChange} placeholder='Enter Confirm Password' required/>
+              <input type="password" name="signUp-confirmPassword" id="signUp-confirmPassword" onChange={handleChange} placeholder='Enter Confirm Password' required/>
             </div>
           <button type="submit" >Sign Up</button>
           </form>

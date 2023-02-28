@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const TabularData = ({ SensorsData }) => {
     const navigate = useNavigate();
@@ -16,7 +16,7 @@ const TabularData = ({ SensorsData }) => {
                 <tbody>
                     {SensorsData.map((item, index) => (
                         <tr key={index} onClick={()=>{
-                            navigate('../sensordetails',{state:{id:item.id,sensor_type:item.sensor_type}});
+                            navigate('../sensordetails',{state:{id:item.id,sensor_type:item.sensor_type, available:item.available}});
                         }}>
                             <td> {item.id}</td>
                             <td>{item.sensor_type}</td>

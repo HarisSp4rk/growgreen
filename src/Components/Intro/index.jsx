@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { RecommendationsContext } from '../../Contexts/RecommendationsContext'
 import './IntroStyles.css'
+import '../../App.css'
 
 const Intro = () => {
+    const {recommendation} = useContext(RecommendationsContext);
     useEffect(()=>{
         window.scrollTo({
             top: 50,
@@ -11,6 +14,7 @@ const Intro = () => {
     
     return (
         <div className='intro-top-text'>
+            <div className='recommendation-container'><div><span>{recommendation}</span></div></div>
             <h2>A Project For </h2>
             <h1>Sensing Climate Change And Environment Variables</h1>
             {/* <div className='intro-image'>

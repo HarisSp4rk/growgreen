@@ -1,4 +1,4 @@
-.dashboardNavbar-container{
+.dashboardNavbar-container {
     display: flex;
     flex-direction: column;
     width: 15%;
@@ -6,24 +6,32 @@
     position: fixed;
     border-radius: 1rem;
     background-color: rgba(255, 255, 255, 1);
-    box-shadow:rgb(248 248 248) 0px 0px 10px 1px;
+    box-shadow: rgb(248 248 248) 0px 0px 10px 1px;
     border: 1px solid #EFF0F6;
 
 }
-.dashboardNavbar-logo{
+
+.dashboardNavbar-logo {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin: 1rem 0.5rem;
     color: #09886F;
+    cursor: pointer;
 }
-.dashboardNavbar-logo img{
+
+.dashboardNavbar-logo img {
     width: 13%;
 }
 
-.dashboardNavbar-menuItems{
-    width: 85%;    
+.dashboardNavbar-menuItems {
+    width: 85%;
     margin: 1rem auto;
+    overflow-y: auto;
+}
+
+.dashboardNavbar-menuItems::-webkit-scrollbar {
+    display: none;
 }
 
 .dashboardNavbar-menuItems ul {
@@ -32,9 +40,11 @@
     justify-content: space-evenly;
 
 }
+
 .dashboardNavbar-menuItems ul li {
     list-style: none;
 }
+
 .dashboardNavbar-menuItems ul li .dashboard-NavLinks {
     border: none;
     width: 100%;
@@ -48,19 +58,21 @@
     border-radius: 10px;
     font-weight: 500;
     height: 2.6rem;
-    cursor:pointer;
-    
+    cursor: pointer;
+
 }
+
 .dashboardNavbar-menuItems ul .dashboard-NavLinks {
     text-decoration: none;
 }
 
-.dashboardNavbar-menuItems ul li .dashboard-NavLinks:hover, .dashboardNavbar-menuItems ul li .active {
+.dashboardNavbar-menuItems ul li .dashboard-NavLinks:hover,
+.dashboardNavbar-menuItems ul li .active {
     color: rgba(27, 89, 248, 1);
-    background-color:rgba(27, 89, 248, 0.1);
+    background-color: rgba(27, 89, 248, 0.1);
 }
 
-.dashboardNavbar-menuItems ul li .dashboard-NavLinks span:first-child{
+.dashboardNavbar-menuItems ul li .dashboard-NavLinks span:first-child {
     padding: 0.4rem 0.5rem 0 1rem;
     font-size: 1.25rem;
 }

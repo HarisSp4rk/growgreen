@@ -1,0 +1,36 @@
+.DownloadCSVModal-container{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0006;
+}
+
+.DownloadCSVModal-innerContainer{
+    height: 15rem;
+    width: 30rem;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 600;
+    box-shadow: 0px 0px 8px 0px;
+    padding: 2rem 0;
+}
+
+.DownloadCSV-inputSelect{
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.DownloadCSV-inputSelect select{
+    cursor: pointer;
+}
