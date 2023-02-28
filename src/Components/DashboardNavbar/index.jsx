@@ -15,7 +15,15 @@ const DashboardNavbar = () => {
       <div className='dashboardNavbar-menuItems'>
         <ul>
           {DashboardMenuItems.map((element, index) => {
-            return <li key={index}> <NavLink to={element.link} className="dashboard-NavLinks"><span>{element.icon}</span><span>{element.name}</span></NavLink></li>
+            return <li key={index}>
+              {
+                element.name === 'Sign Out'
+                  ?
+                  <NavLink to={element.link} onClick={() => { localStorage.removeItem("token") }} className="dashboard-NavLinks"><span>{element.icon}</span><span>{element.name}</span></NavLink>
+                  :
+                  <NavLink to={element.link} className="dashboard-NavLinks"><span>{element.icon}</span><span>{element.name}</span></NavLink>
+              }
+            </li>
           })}
         </ul>
       </div>

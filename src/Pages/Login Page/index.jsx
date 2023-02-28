@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import SideImg from '../../assets/Login/login.svg'
 import logo from '../../assets/Login/LoginLogo.svg'
-import { Link } from "react-router-dom";
-import { gql,  useMutation } from '@apollo/client';
+import { Link, useNavigate } from "react-router-dom";
+import { gql, useMutation } from '@apollo/client';
 import './loginStyles.css'
 import { useEffect } from 'react';
 import '../../App.css'
@@ -19,8 +19,16 @@ const User_Login = gql`
 
 
 const LoginPage = () => {
+  const navigate = useNavigate()
   const [login, { data, loading, error }] = useMutation(User_Login);
-  useEffect(()=>{console.log(data)},[data])
+  useEffect(() => {
+    if (data!=undefined & !loading & !error){
+      console.log(data)
+      localStorage.setItem("token",data.login.token)
+      navigate('/dashboard/reports')
+    }
+  }, [data])
+
   const [loginData, setLoginData] = useState({ email: '', password: '' })
 
   const handleChange = (e) => {
@@ -31,15 +39,15 @@ const LoginPage = () => {
     try {
       await login({ variables: { email: loginData.email, password: loginData.password } });
       console.log(loginData)
-      console.log(error, '123123')
-      console.log(loading)
-      
+      // console.log(error, '123123')
+      // console.log(loading)
+
     } catch (error) {
       console.log(error.message)
     }
-    
+
   }
-  if (loading) return <div style={{ marginTop: '10rem', height:'100vh' }} className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>;
+  if (loading) return <div style={{ marginTop: '10rem', height: '100vh' }} className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>;
 
   return (
     <div className='login-container'>
