@@ -82,7 +82,11 @@ const DashboardActiveSensorsDetails = () => {
                 <div className='DashboardActiveSensorsDetails-inner-elements'>
                     <div>Last Heart Beat: </div><div>{sensorData.last_heart_beat}</div>
                 </div>
-                {sensorData.long !== 0 & location.state.available ? <div className='DashboardActiveSensorDetails-openStreets'>
+                {!location.state.available ?
+                        <button className='Request-NewDevice-button' onClick={()=>{window.open('https://forms.gle/dZMeX5ofW82iu8qSA','_blank')}} >Report Inactive Sensor</button>
+                    : null
+                }
+                {sensorData.long !== 0 ? <div className='DashboardActiveSensorDetails-openStreets'>
 
                     <MapContainer style={{ height: '100%', width: '100%' }} center={[sensorData.lat, sensorData.long]} zoom={13} >
                         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -98,12 +102,9 @@ const DashboardActiveSensorsDetails = () => {
                         </Marker>
                     </MapContainer>
                 </div>
-                    : !location.state.available ?
-                        <form action='https://forms.gle/dZMeX5ofW82iu8qSA'>
-                            <button className='Request-NewDevice-button' >Report Inactive Sensor</button>
-                        </form>
-                        :
-                        <div style={{ marginTop: '10rem', height: '100vh' }} className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+                    :
+                    <div style={{ marginTop: '10rem', height: '100vh' }} className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 }
 
             </div>

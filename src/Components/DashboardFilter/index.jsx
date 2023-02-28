@@ -133,8 +133,8 @@ const DashboardFilter = () => {
                     <h1>{data.getfilterss.analytics.aggregations.avg_ppm.values['50.0'].toFixed(4)}</h1>
                   </div>}
                 <div className='DashboardGasTemperature-innerContainer'>
-                  <h4>Percentage</h4>
-                  <h1>{['temperature', 'humidity'].includes(sensor) ? (data.getfilterss.analytics.aggregations.avg_price.values['50.0']).toFixed(1) : (data.getfilterss.analytics.aggregations.avg_price.values['50.0']).toFixed(4)}%</h1>
+                  <h4>{sensor!=='temperature'?'Percentage':'Temperature'}</h4>
+                  <h1>{['temperature', 'humidity'].includes(sensor) ? (data.getfilterss.analytics.aggregations.avg_price.values['50.0']).toFixed(1) : (data.getfilterss.analytics.aggregations.avg_price.values['50.0']).toFixed(4)}{sensor!=='temperature'?'%':' C'}</h1>
                 </div>
               </div>
             </>

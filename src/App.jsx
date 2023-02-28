@@ -8,7 +8,6 @@ import Dashboard from './Pages/Dashboard';
 import DashboardReports from './Components/DashboardReports';
 import DashboardFilter from './Components/DashboardFilter';
 import DashboardCorelations from './Components/DashboardCorelations';
-import DashboardSettings from './Components/DashboardSettings';
 import DashboardActiveSensors from './Components/DashboardActiveSensors';
 import DashboardActiveSensorsDetails from './Components/DashboardActiveSensorsDetails';
 import DashboardTemperature from './Components/DashboardGasTemperature';
@@ -17,16 +16,55 @@ import DashboardCO from './Components/DashboardGasCO';
 import DashboardHumidity from './Components/DashboardGasHumidity';
 import DashboardMethane from './Components/DashboardGasMethane';
 import { RecommendationsContext } from './Contexts/RecommendationsContext';
+import DashboardRecommendations from './Components/DashboardRecommendations';
 import return_string from './Pages/Landing Page/Function';
+import axios from 'axios';
 
 const App = () => {
-  const [recommendation, setRecommendation] = useState("hello world, hello world, hello asdfasdf asd fasd fas dfas df asdf asdf as df asdf asdf asd fas dfas df asd f asdf asdfas df asdf as dfa sdf asdf as df asdf as df")
-  useEffect(()=>{
-    setRecommendation(return_string({"temp":20, "humidity":20,"CO2":30,"NH4":22,"CO":44}))
-  },[])
+  const [recommendation, setRecommendation] = useState("")
+  const [userGasesData, setUserGasesData] = useState({})
+  const fetchDataForRecommendation = async (lat, long) => {
+    console.log("lattt:", lat, 'long:', long)
+    console.log(`${import.meta.env.VITE_API_URL}/api/services/v1/recommend`)
+    await axios.post(
+      `${import.meta.env.VITE_API_URL}/api/services/v1/recommend`,
+      {
+        "long": Number(long),
+        "lat": Number(lat)
+      })
+      .then(response => {
+        console.log(response.data)
+        setRecommendation(return_string({
+          temp: (response.data.temperature.aggregations.avg_price.values['50.0']), //temperature
+          humidity: (response.data.humidity.aggregations.avg_price.values['50.0']),//humidity
+          CO2: (response.data.carbondioxide.aggregations.avg_ppm.values['50.0']), //Co2
+          CO: (response.data.carbonmonoxide.aggregations.avg_ppm.values['50.0']), //Co
+          NH4: (response.data.methane.aggregations.avg_ppm.values['50.0']) //methane
+        }))
+        setUserGasesData({...userGasesData,
+          temp: (response.data.temperature.aggregations.avg_price.values['50.0']), //temperature
+          humidity: (response.data.humidity.aggregations.avg_price.values['50.0']),//humidity
+          CO2: (response.data.carbondioxide.aggregations.avg_ppm.values['50.0']), //Co2
+          CO: (response.data.carbonmonoxide.aggregations.avg_ppm.values['50.0']), //Co
+          NH4: (response.data.methane.aggregations.avg_ppm.values['50.0']) //methane
+        })
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(function (position) {
+
+      fetchDataForRecommendation(position.coords.latitude, position.coords.longitude);
+      console.log("Latitude is :", position.coords.latitude);
+      console.log("Longitude is :", position.coords.longitude);
+    });
+  }, [])
+
   return (
     <div className='App'>
-      <RecommendationsContext.Provider value={{recommendation}} >
+      <RecommendationsContext.Provider value={{ recommendation, userGasesData }} >
         <BrowserRouter>
           <Routes>
             <Route index element={<LandingPage />} />
@@ -42,7 +80,7 @@ const App = () => {
               <Route path='co' element={<DashboardCO />} />
               <Route path='humidity' element={<DashboardHumidity />} />
               <Route path='methane' element={<DashboardMethane />} />
-              <Route path='settings' element={<DashboardSettings />} />
+              <Route path='recommendations' element={<DashboardRecommendations />} />
             </Route>
             <Route path="/signup" element={<SignUpPage />} />
           </Routes>
