@@ -44,3 +44,25 @@
         width: 80%;
     }
 }
+
+.filter-MarkerText{
+    margin: 0.2rem 0;
+}
+
+.Request-NewDevice-button{
+    width: 15rem;
+    padding: 0.5rem;
+    border: none;
+    font-weight: 600;
+    margin: auto;
+    box-shadow: grey 5px 5px 5px 0px;
+    border-radius: 5rem;
+    cursor: pointer;
+    background-color: #09886F;
+    color: white;
+    margin-top: 2rem;
+}
+
+.Request-NewDevice-button:hover{
+    text-decoration: underline;
+}

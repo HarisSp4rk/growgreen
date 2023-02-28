@@ -1,8 +1,28 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { NavLink } from 'react-router-dom';
+import { DashboardMenuItems } from '../DashboardNavbar/DashboardNavebarMenuItems';
 const DashboardCorelations = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <div>DashboardCorelations</div>
+    <div className='dashboardActivitySensors-container'>
+      <div className='dashboardActivitySensors-heading'>
+        <div className='dashboard-hamburger-icon' onClick={() => { setMobileMenuOpen(!mobileMenuOpen) }}><RxHamburgerMenu /></div>
+        <h2>Co-Relations</h2>
+        <div>
+          {/* <IoMdDownload />Download */}
+        </div>
+      </div>
+      <div className='dashboard-mobile-menuItems' style={{ display: mobileMenuOpen ? 'flex' : 'none' }}>
+        <div className='dashboardNavbar-menuItems'>
+          <ul>
+            {DashboardMenuItems.map((element, index) => {
+              return <li key={index}> <NavLink to={'../' + element.link} className="dashboard-NavLinks"><span>{element.icon}</span><span>{element.name}</span></NavLink></li>
+            })}
+          </ul>
+        </div>
+      </div>
+    </div>
   )
 }
 
