@@ -10,7 +10,7 @@ const DownloadCSVModal = ({setIsOpen}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        await axios.get('http://growgreen-api.harisaqeel.com:3002/api/services/v1/csv',
+        await axios.get(`${import.meta.env.VITE_API_URL}/api/services/v1/csv`,
             {
                 "sensor_type": e.target.sensor_type.value,
                 "by": Number(e.target.RangeLimit.value),

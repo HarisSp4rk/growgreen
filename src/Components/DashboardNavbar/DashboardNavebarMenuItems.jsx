@@ -55,13 +55,13 @@ export const DashboardMenuItems = [
         link: 'methane'
     },
     {
-        name: 'Settings', 
+        name: 'Recommendations', 
         icon: <IoSettingsSharp/>,
-        link: 'settings'
+        link: 'recommendations'
     },
     {
         name: 'Sign Out', 
         icon: <GoSignOut/>,
-        link: 'xyz'
+        link: '../../#home'
     }
 ]

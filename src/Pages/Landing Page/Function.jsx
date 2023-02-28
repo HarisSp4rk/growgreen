@@ -1,4 +1,5 @@
 function return_string(obj) {
+    if (obj.temp===null)return "No Devices near your location"
     var arr = [];
     var arr_2 = [0, 0];
     var return_1 = [];
@@ -18,7 +19,7 @@ function return_string(obj) {
         arr_2[0] = -1;
     }
 
-    else if (obj.temp > 23.89) {
+    else if (obj.temp > 33.89) {
         arr.push("temperature");
     }
 
@@ -28,7 +29,7 @@ function return_string(obj) {
         arr_2[1] = -1;
     }
 
-    else if (obj.humidity > 50) {
+    else if (obj.humidity > 60) {
         arr.push("humidity");
     }
 
@@ -39,12 +40,12 @@ function return_string(obj) {
     }
 
     // CO = carbonmonoxide
-    if (obj.CO > 50) {
+    if (obj.CO > 30) {
         arr.push("carbonmonoxide");
     }
 
     // NH4 = ammonia
-    if (obj.NH4 > 25) {
+    if (obj.NH4 > 30) {
         arr.push("ammonia");
     }
 
@@ -103,6 +104,7 @@ function return_string(obj) {
 
     // console.log(return_val);
     // return arr;
+    console.log(return_val)
     return return_val;
 
 }
@@ -134,6 +136,7 @@ function makeSentence(params_1, params_2, r2) {
                 temp = "temperature is below the limit set by WHO";
                 r2.push("For low temperatures, minimize time spent outdoors while temperatures are low and do not ignore shivering. It's an important first sign that the body is losing heat and is a signal to return indoors. Dress appropriately for the weather and stay dry.")
                 sentence.push(temp);
+                break;
         }
     }
 
@@ -150,6 +153,7 @@ function makeSentence(params_1, params_2, r2) {
                 temp = temp + "humidity is above the limit set by WHO";
                 r2.push("For high humidity, stay hydrated by drinking plenty of fluids, especially water. Stay cool by wearing a hat and lightweight, light-colored, loose-fitting clothing. Avoid or limit exercise during the hottest hours of the day")
                 sentence.push(temp);
+                break;
 
             case -1:
                 //st[1] = "below";
