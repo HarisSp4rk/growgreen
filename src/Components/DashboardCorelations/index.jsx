@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { NavLink } from 'react-router-dom';
 import { DashboardMenuItems } from '../DashboardNavbar/DashboardNavebarMenuItems';
+import './DashboardCorelationsStyles.css'
 const DashboardCorelations = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
@@ -21,6 +22,10 @@ const DashboardCorelations = () => {
             })}
           </ul>
         </div>
+      </div>
+      <div className='DashboardCorelations-container'>
+
+      <h1 style={{fontSize:'5rem',}}>Comming Soon ...</h1>
       </div>
     </div>
   )

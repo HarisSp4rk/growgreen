@@ -21,7 +21,7 @@ const AboutUs = () => {
         <div className='aboutUs-right-side'>
             <h2>About Us</h2>
             <h1>We Provide Dashboard to know about atmosphere</h1>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+            <p>Welcome to our web application, dedicated to providing you with real-time readings of air pollutants, temperature, and humidity in your local environment. Our goal is to help you stay informed about the quality of the air you breathe and to provide you with the necessary information to make informed decisions about your health and well-being.</p>
             <div style={{display:'flex', justifyContent:'center', alignItems:'cetner'}}>
             <button className='button1' style={{color:'white', border:'none'}} >View Dashboard</button>
             <button className='contactUs-button'>Contact Us</button>

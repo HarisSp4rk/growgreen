@@ -24,8 +24,8 @@ const App = () => {
   const [recommendation, setRecommendation] = useState("")
   const [userGasesData, setUserGasesData] = useState({})
   const fetchDataForRecommendation = async (lat, long) => {
-    console.log("lattt:", lat, 'long:', long)
-    console.log(`${import.meta.env.VITE_API_URL}/api/services/v1/recommend`)
+    console.log("Your Latitude:", lat)
+    console.log("Your Longitude: ", long)
     await axios.post(
       `${import.meta.env.VITE_API_URL}/api/services/v1/recommend`,
       {
@@ -57,8 +57,6 @@ const App = () => {
     navigator.geolocation.getCurrentPosition(function (position) {
 
       fetchDataForRecommendation(position.coords.latitude, position.coords.longitude);
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
     });
   }, [])
 

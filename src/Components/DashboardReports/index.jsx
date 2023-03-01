@@ -72,31 +72,37 @@ const DashboardReports = () => {
         {
           title: 'Active Sensors',
           value: '27',
-          extra: '/80'
+          extra: '/80',
+          url:'../activesensors'
         },
         {
           title: 'Temperature',
           value: temperature.toFixed(0) + ' C',
+          url:'../temperature'
         },
         {
           title: 'Humidity',
           value: humidity.toFixed(1) + '%',
+          url:'../humidity'
         },
         {
           title: 'C02',
           value: (CO2.toFixed(3)) + '%',
+          url:'../co2'
         },
         {
           title: 'C0',
           value: (CO.toFixed(3)) + '%',
+          url:'../co'
         },
         {
           title: 'CH4',
           value: (methane.toFixed(3)) + '%',
+          url:'../methane'
         },
       ])
-
-
+      
+      
     }
   }, [data])
 
@@ -140,11 +146,11 @@ const DashboardReports = () => {
             {mappingReportsData.map((element, index) => {
               return (
                 element.title === 'Active Sensors' ?
-                  <div key={index} onClick={() => { navigate('../activesensors') }}>
+                  <div key={index} onClick={() => { navigate(element.url) }}>
                     <h5>{element.title}</h5>
                     <h1>{data ? data.getonlinedevices.online_devices : element.value}<span>{data ? '/' + data.getonlinedevices.total_devices : element.extra}</span></h1>
                   </div> :
-                  <div key={index}>
+                  <div key={index} onClick={() => { navigate(element.url) }}>
                     <h5>{element.title}</h5>
                     <h1>{element.value}<span>{element.extra}</span></h1>
                   </div>
@@ -167,13 +173,13 @@ const DashboardReports = () => {
             </h5>
             <div className='reports-Activitybarchart'>
               <div className='barchart-upper-container'>
-                {/* <div className='barchart-percentage-container'>
+                <div className='barchart-percentage-container'>
                   <span>100%</span>
                   <span>75%</span>
                   <span>50%</span>
                   <span>25%</span>
                   <span>0%</span>
-                </div> */}
+                </div>
                 <div className='barchart-all-bars-container'>
                   {/* <ActivityBar month={element.month} percentage={element.percentage}/> */}
                   {mappingBarChartData.map((element, index) => {
@@ -183,11 +189,12 @@ const DashboardReports = () => {
                   })}
                 </div>
               </div>
-              {/* <div className='barchart-bottom-container'>
+              <div className='barchart-bottom-container'>
+                <span ></span>
                 {mappingBarChartData.map((element, index) => {
                   return <span key={index}>{element.month}</span>
                 })}
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
