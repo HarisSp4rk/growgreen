@@ -2,8 +2,10 @@ import React, { useContext, useEffect } from 'react'
 import { RecommendationsContext } from '../../Contexts/RecommendationsContext'
 import './IntroStyles.css'
 import '../../App.css'
+import { useNavigate } from 'react-router-dom'
 
 const Intro = () => {
+    const navigate = useNavigate();
     const {recommendation} = useContext(RecommendationsContext);
     useEffect(()=>{
         window.scrollTo({
@@ -31,8 +33,8 @@ const Intro = () => {
                 </div>
             </div> */}
             <div className='intro-image'>
-                <button className='button1'>View Dashboard</button>
-            <button className='button2'>Sign Up</button>
+                <button className='button1' onClick={()=>{navigate('/dashboard/reports')}}>View Dashboard</button>
+            <button className='button2' onClick={()=>{navigate('/signup')}}>Sign Up</button>
             <div className='intro-image-inner-divs intro-image-div1'>
                 <div className='small-circle'></div>
                 <div className='intro-image-right-side-text '>A revolutionary change that is going to take Pakistan one step closer to being a smart city.</div>

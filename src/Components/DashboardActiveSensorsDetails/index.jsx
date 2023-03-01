@@ -82,7 +82,7 @@ const DashboardActiveSensorsDetails = () => {
                 <div className='DashboardActiveSensorsDetails-inner-elements'>
                     <div>Last Heart Beat: </div><div>{sensorData.last_heart_beat}</div>
                 </div>
-                {!location.state.available ?
+                {!Number(location.state.available) ?
                         <button className='Request-NewDevice-button' onClick={()=>{window.open('https://forms.gle/dZMeX5ofW82iu8qSA','_blank')}} >Report Inactive Sensor</button>
                     : null
                 }

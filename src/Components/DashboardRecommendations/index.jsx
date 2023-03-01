@@ -42,27 +42,27 @@ const DashboardRecommendations = () => {
       <div className='DashboardGasTemperature-container'>
         <div className='DashboardGasTemperature-innerContainer'>
           <h4>Temperature</h4>
-          <h1>{userGasesData.temp===null?'-':userGasesData.temp}</h1>
+          <h1>{userGasesData.temp===null?'-':userGasesData.temp+' C'}</h1>
         </div>
         <div className='DashboardGasTemperature-innerContainer'>
           <h4>Humidity</h4>
-          <h1>{userGasesData.humidity===null?'-':userGasesData.humidity}</h1>
+          <h1>{userGasesData.humidity===null?'-':userGasesData.humidity+' %'}</h1>
         </div>
       </div>
       <div className='DashboardGasTemperature-container'>
         <div className='DashboardGasTemperature-innerContainer'>
           <h4>CO2</h4>
-          <h1>{userGasesData.CO2===null?'-':userGasesData.CO2}</h1>
+          <h1>{userGasesData.CO2===null?'-':userGasesData.CO2+' %'}</h1>
         </div>
         <div className='DashboardGasTemperature-innerContainer'>
           <h4>CO</h4>
-          <h1>{userGasesData.CO===null?'-':userGasesData.CO}</h1>
+          <h1>{userGasesData.CO===null?'-':userGasesData.CO+' %'}</h1>
         </div>
       </div>
       <div className='DashboardGasTemperature-container'>
         <div className='DashboardGasTemperature-innerContainer'>
           <h4>NH4</h4>
-          <h1>{userGasesData.NH4===null?'-':userGasesData.NH4}</h1>
+          <h1>{userGasesData.NH4===null?'-':userGasesData.NH4+' %'}</h1>
         </div>
       </div>
       
